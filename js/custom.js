@@ -30,4 +30,17 @@
 
 
 })(jQuery);
+{
+  const contact = document.querySelector('#contact'),
+    register_btn = document.querySelector('.register__btn');
+  let y = contact.getBoundingClientRect().y;
+  window.addEventListener('scroll', (e) => {
+    console.log(y, window.scrollY);
+    if (y - contact.getBoundingClientRect().height < window.scrollY) {
+      register_btn.classList.add('d-none');
+    } else {
+      register_btn.classList.remove('d-none');
+    }
+  })
+}
 
